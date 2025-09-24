@@ -350,7 +350,7 @@
   <header class="navbar" role="navigation" aria-label="Main">
     <div class="container wrap">
       <a class="logo" href="#home">
-        <span class="logo-mark"><img src="SalmonBlack.png" alt="Salmon & Co Solicitors logo with scales of justice"></span>
+        <span class="logo-mark"><img src="salmonblack.png" alt="Salmon & Co Solicitors logo with scales of justice"></span>
       </a>
       <nav>
         <a href="#about">About Us</a>
@@ -733,7 +733,7 @@
 
   <footer role="contentinfo">
     <div class="container footgrid">
-      <div><div class="logo"><span class="logo-mark"><img src="Salmon.png" alt="Salmon & Co Solicitors logo" style="filter: brightness(0) invert(1);"></span></div><p class="disclaimer">This website provides general information only and does not constitute legal advice...</p></div>
+      <div><div class="logo"><span class="logo-mark"><img src="salmon.png" alt="Salmon & Co Solicitors logo" style="filter: brightness(0) invert(1);"></span></div><p class="disclaimer">This website provides general information only and does not constitute legal advice...</p></div>
       <div><h4>Contact</h4><p>📍 157A Waterloo Rd, Greenacre NSW 2190<br/>📞 (02) 9750 7511</p></div>
       <div><h4>Follow Us</h4><p><a href="#">LinkedIn</a><br><a href="#">Facebook</a></p></div>
     </div>
@@ -798,6 +798,83 @@
       }
     });
   </script>
-</body>
 
+  <!-- Chat Bubble -->
+  <style>
+  #salmon-bubble{position:fixed;right:20px;bottom:20px;z-index:9999}
+  #salmon-bubble button {
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:0;
+    background-color: #0F3446;
+    background-image: url('Chatbubble.png');
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    transition: transform 0.3s ease;
+    color: white;
+  }
+  #salmon-bubble button:hover {
+    transform: scale(1.1);
+  }
+  #salmon-panel{position:fixed;right:20px;bottom:102px;width:340px;max-height:60vh;background:#fff;border:1px solid #ddd;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:none;overflow:hidden;font:14px system-ui}
+  #salmon-head{padding:10px 12px;border-bottom:1px solid #eee;font-weight:600}
+  #salmon-msgs{padding:12px;height:300px;overflow:auto}
+  #salmon-form{display:flex;gap:6px;padding:8px;border-top:1px solid #eee;background:#fafafa}
+  #salmon-form input{flex:1;padding:10px;border:1px solid #ddd;border-radius:10px}
+  #salmon-form button{padding:10px 12px;border:0;border-radius:10px;background:#111;color:#fff;cursor:pointer}
+  </style>
+
+  <div id="salmon-bubble">
+    <button id="salmon-open" aria-label="Open chat"></button>
+  </div>
+
+  <div id="salmon-panel" role="dialog" aria-label="Salmon & Co. Chat">
+    <div id="salmon-head">Salmon &amp; Co. — Chat</div>
+    <div id="salmon-msgs"></div>
+    <form id="salmon-form">
+      <input id="salmon-input" placeholder="Ask about our services…" autocomplete="off" />
+      <button>Send</button>
+    </form>
+  </div>
+
+  <script>
+  const API = "https://salmonchatfunc-fydkcxbhh2bufxca.australiaeast-01.azurewebsites.net/api/chat";
+  const openBtn = document.getElementById('salmon-open');
+  const panel = document.getElementById('salmon-panel');
+  const msgs = document.getElementById('salmon-msgs');
+  const form = document.getElementById('salmon-form');
+  const input = document.getElementById('salmon-input');
+  const history = [];
+
+  openBtn.onclick = ()=>{ panel.style.display = panel.style.display==='none' || !panel.style.display ? 'block':'none'; };
+
+  function add(role, text){
+    const d = document.createElement('div');
+    d.style.whiteSpace='pre-wrap'; d.style.margin='6px 0';
+    d.innerHTML = `<strong>${role}:</strong> ${text}`;
+    msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const user = input.value.trim(); if(!user) return;
+    add('You', user); input.value = '';
+
+    const res = await fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ message: user, history })
+    });
+    const data = await res.json();
+    const bot = data.text || 'Sorry, no response.';
+    add('Bot', bot);
+
+    history.push({role:'user', content:user}, {role:'assistant', content:bot});
+    if (history.length > 12) history.splice(0, history.length - 12);
+  });
+  </script>
+</body>
 </html>
