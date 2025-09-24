@@ -42,7 +42,9 @@
   --muted:#667085;     /* secondary text */
   --line:#E5E7EB;      /* borders */
   --white:#fff;
-  --chat-avatar-size: 32px;  /* Adjust this to change avatar size */
+  --chat-avatar-size: 32px;
+  --chat-avatar-font: 11px;
+  --chat-avatar-size: 40px;  /* Adjust this to change avatar size */
   --chat-avatar-font: 11px;  /* Adjust this to change avatar text size */
     }
     html,body{margin:0;padding:0;color:var(--ink);font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;line-height:1.6;background:var(--sand)}
@@ -734,7 +736,7 @@
 
   <footer role="contentinfo">
     <div class="container footgrid">
-      <div><div class="logo"><span class="logo-mark"><img src="Salmon.png" alt="Salmon & Co Solicitors logo" style="filter: brightness(0) invert(1);"></span></div><p class="disclaimer">This website provides general information only and does not constitute legal advice...</p></div>
+      <div><div class="logo"><span class="logo-mark"><img src="Salmon.png" alt="Salmon & Co Solicitors logo" style="filter: brightness(0) invert(1);"></span></div><p class="disclaimer"><i><em>This website provides general information only and does not constitute legal advice...</em></i></p></div>
       <div><h4>Contact</h4><p>📍 157A Waterloo Rd, Greenacre NSW 2190<br/>📞 (02) 9750 7511</p></div>
       <div><h4>Follow Us</h4><p><a href="#">LinkedIn</a><br><a href="#">Facebook</a></p></div>
     </div>
@@ -808,7 +810,7 @@
     height:70px;
     border-radius:50%;
     border:0;
-    background-color: #0F3446;
+    background-color: #265972;
     background-image: url('Chatbubble.png');
     background-size: 60%;
     background-position: center;
@@ -824,25 +826,27 @@
   #salmon-head{padding:16px;border-bottom:1px solid #eee;font-weight:600}
   #salmon-msgs{padding:20px;height:450px;overflow:auto}
   #salmon-msgs .msg{display:flex;gap:12px;margin:16px 0;align-items:flex-start}
-  #salmon-msgs .avatar{
-    min-width:10px;
-    width:10px;
-    height:32px;
-    border-radius:9999px;
-    flex-shrink:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:500;
-    font-size:11px;
-    box-shadow:0 2px 4px rgba(0,0,0,0.1);
-    overflow:hidden;
+  #salmon-msgs .msg .avatar{
+    min-width: var(--chat-avatar-size) !important;
+    width: var(--chat-avatar-size) !important;
+    height: var(--chat-avatar-size) !important;
+    border-radius: 9999px !important;
+    flex: none !important;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: var(--chat-avatar-font);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: none !important;
   }
-  #salmon-msgs .user .avatar{
+  #salmon-msgs .msg.user .avatar{
     background:#E1F0FF;
     color:#0066CC;
   }
-  #salmon-msgs .bot .avatar{
+  #salmon-msgs .msg.bot .avatar{
     background:#1B4965;
     color:#ffffff;
   }
@@ -892,32 +896,9 @@
     <button id="salmon-open" aria-label="Open chat"></button>
   </div>
 
-  <div id="salmon-panel" role="dialog" aria-label="Salmon & Co. Chat">
-    <div id="salmon-head">Salmon &amp; Co. — Chat</div>
+  <div id="salmon-panel" role="dialog" aria-label="Salmon & Co. Ai Chat">
+    <div id="salmon-head">Salmon &amp; Co. — Ai Assistant Chat</div>
     <div id="salmon-msgs">
-      <!-- Example messages for styling purposes debug-->
-      <div class="msg user">
-        <div class="avatar">You</div>
-        <div class="content">Hi, I have a question about family law services.</div>
-      </div>
-      <div class="msg bot">
-        <div class="avatar">S.C.AI</div>
-        <div class="content">Hello! I'd be happy to help with your family law inquiry. We handle various aspects of family law including divorce, child custody, property settlements, and domestic violence orders. What specific information would you like to know?</div>
-      </div>
-      <div class="msg user">
-        <div class="avatar">You</div>
-        <div class="content">What documents do I need for a divorce application?</div>
-      </div>
-      <div class="msg bot">
-        <div class="avatar">S.C.AI</div>
-        <div class="content">For a divorce application in Australia, you'll need:
-- Marriage certificate
-- Proof of citizenship/residency
-- Separation declaration
-- Identification documents
-
-Would you like me to explain more about each requirement or help you book a consultation with our family law team?</div>
-      </div>
     </div>
     <form id="salmon-form">
       <input id="salmon-input" placeholder="Ask about our services…" autocomplete="off" />
@@ -938,15 +919,26 @@ Would you like me to explain more about each requirement or help you book a cons
 
   function add(role, text){
     const d = document.createElement('div');
-    d.className = `msg ${role.toLowerCase()}`;
+    d.className = `msg ${role.toLowerCase() === 'bot' ? 'bot' : 'user'}`;
     d.style.whiteSpace = 'pre-wrap';
     const displayName = role === 'Bot' ? 'S.C.AI' : 'You';
+    
+    // Format lists if text contains bullet points
+    let formattedText = text;
+    if (text.includes('\n-')) {
+      formattedText = text.split('\n').map(line => {
+        if (line.trim().startsWith('-')) {
+          return '• ' + line.trim().substring(1);
+        }
+        return line;
+      }).join('\n');
+    }
+    
     d.innerHTML = `
       <div class="avatar">${displayName}</div>
-      <div class="content">
-        ${text}
-      </div>
+      <div class="content">${formattedText}</div>
     `;
+    
     msgs.appendChild(d);
     msgs.scrollTop = msgs.scrollHeight;
     return d;
@@ -984,9 +976,13 @@ Would you like me to explain more about each requirement or help you book a cons
         body: JSON.stringify({ message: user, history })
       });
       const data = await res.json();
-      const bot = data.text || 'Sorry, no response.';
+      let botResponse = data.text || 'Sorry, no response.';
+      
+      // Format the response to handle lists and formatting
+      botResponse = botResponse.replace(/\n\s*-\s*/g, '\n- '); // Normalize list formatting
+      
       typingIndicator.remove();
-      add('Bot', bot);
+      add('Bot', botResponse);
     } catch (error) {
       typingIndicator.remove();
       add('Bot', 'Sorry, I encountered an error. Please try again.');
@@ -996,5 +992,6 @@ Would you like me to explain more about each requirement or help you book a cons
     if (history.length > 12) history.splice(0, history.length - 12);
   });
   </script>
+
 </body>
 </html>
