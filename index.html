@@ -1,0 +1,1916 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salmon &amp; Co Solicitors — Sydney Legal Services</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salmon &amp; Co Solicitors — Sydney Legal Services</title>
+  <meta name="description" content="Salmon &amp; Co Solicitors — Wills &amp; Estates, Family &amp; Criminal Law, Real Estate, Business &amp; Commercial, Mortgages &amp; Loans. Greenacre NSW." />
+  <style>
+    /* Base styles */
+    .attorneys .person{
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .avatar{
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      flex: 0 0 120px;
+      border: 3px solid #E5E7EB;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .avatar img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .card.person h3{margin: 0 0 .3rem}
+    .card.person p{margin: 0}
+
+    :root{
+  --navy:#0F3446;      /* brand primary */
+  --teal:#0EA5A3;      /* accent */
+  --sand:#F3F6F8;      /* soft bg */
+  --ink:#1F2937;       /* body text */
+  --muted:#667085;     /* secondary text */
+  --line:#E5E7EB;      /* borders */
+  --white:#fff;
+  --chat-avatar-size: 32px;
+  --chat-avatar-font: 11px;
+  --chat-avatar-size: 40px;  /* Adjust this to change avatar size */
+  --chat-avatar-font: 11px;  /* Adjust this to change avatar text size */
+    }
+    html,body{margin:0;padding:0;color:var(--ink);font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;line-height:1.6;background:var(--sand)}
+    .serif{font-family: Georgia, "Times New Roman", Times, serif}
+    .container{max-width:1180px;margin:0 auto;padding:0 1.2rem 0 1.2rem}
+    a{color:inherit}
+    .btn{display:inline-block;padding:.75rem 1rem;border-radius:.75rem;text-decoration:none;border:1px solid var(--navy);transition:transform .06s ease}
+    .btn:active{transform:translateY(1px)}
+    .btn.primary{background:var(--navy);color:var(--white);border-color:var(--navy)}
+    .btn.ghost{background:transparent;color:var(--navy)}
+    .badge{display:inline-flex;gap:.5rem;align-items:center;background:var(--white);border:1px solid var(--line);padding:.4rem .6rem;border-radius:.6rem;font-size:.85rem;color:var(--muted)}
+
+    header.navbar{
+      position:sticky;
+      top:0;
+      z-index:5;
+      margin:0 16px;
+      border-radius:0 0 14px 14px;
+      padding:0.25rem;
+      background:var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    header.navbar .wrap{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0.5rem 1.2rem;
+      border-radius:10px;
+      background:var(--white);
+      height:80px;
+      box-sizing:border-box;
+    }
+    .logo{display:flex;align-items:center;gap:.6rem;font-weight:700;color:var(--navy)}
+    .logo-mark{width:160px;height:70px;display:block}
+    .logo-mark img {width:100%;height:100%;object-fit:contain}
+    nav a{margin-left:1rem;color:var(--muted);text-decoration:none}
+    nav a.active, nav a:hover{color:var(--navy)}
+
+    /* hero */
+    .hero{background:linear-gradient(180deg,#ffffff, #f7fafc); padding:2.5rem 0;border-bottom:1px solid var(--line)}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+    .hero h1{font-size:clamp(1.8rem,4.5vw,3rem);line-height:1.15;color:var(--navy)}
+    .hero p{color:var(--muted);font-size:1.06rem}
+    .card{background:var(--white);border:1px solid var(--line);border-radius:1rem;padding:1rem}
+
+    /* sections */
+    section{padding:3rem 0}
+    .section-title{font-size:1.7rem;color:var(--navy);margin:0 0 1rem}
+    .subtle{color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .list-clean{list-style:none;margin:0;padding:0}
+
+    /* tiles */
+    .tile{display:flex;flex-direction:column;gap:.6rem}
+    .tile img{width:100%;height:180px;object-fit:cover;border-radius:.6rem;border:1px solid var(--line)}
+    
+    /* practice cards */
+    .practice-card {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .practice-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .practice-card img {
+      transition: all 0.2s ease;
+    }
+    .practice-card:hover img {
+      transform: scale(1.05);
+    }
+
+    /* attorneys */
+    .attorneys .person{
+      display:flex;
+      gap:1rem;
+      align-items:center;
+      cursor:pointer;
+      transition:all 0.2s ease;
+      position:relative;
+      padding:1.5rem;
+    }
+    .attorneys .person:hover {
+      transform:translateY(-2px);
+      box-shadow:0 8px 24px rgba(0,0,0,0.12);
+    }
+    .avatar{
+      min-width:100px;
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      overflow:hidden;
+      background:linear-gradient(135deg,#CBD5E1,#94A3B8);
+      display:grid;
+      place-items:center;
+      border:3px solid #E5E7EB;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      flex: 0 0 100px;
+      position: relative;
+    }
+    .avatar::after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+    .avatar img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      object-position:100% center
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15,52,70,0.9);
+      z-index: 1000;
+      padding: 1rem;
+      backdrop-filter: blur(4px);
+    }
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 1.25rem;
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      max-height: 90vh;
+      overflow-y: auto;
+      text-align: center;
+      border: 1px solid var(--line);
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+    
+    .modal-content::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
+    .modal .avatar {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 1.5rem;
+      border-width: 4px;
+    }
+    .modal .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .modal-bio {
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 600px) {
+      .modal {
+        padding: 1rem;
+      }
+      .modal-content {
+        padding: 1.5rem;
+        margin: 1rem;
+        max-width: calc(100% - 2rem);
+      }
+      .attorneys .person {
+        padding: 1rem;
+        margin: 0.5rem;
+        border-radius: 1rem;
+      }
+      .avatar {
+        min-width: 80px;
+        width: 80px;
+        height: 80px;
+        flex: 0 0 80px;
+      }
+      .modal .avatar {
+        min-width: 120px;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 1rem;
+        flex: 0 0 120px;
+      }
+      .grid-2 {
+        padding: 0 0.5rem;
+      }
+    }
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: var(--sand);
+      border: 1px solid var(--line);
+      font-size: 1.25rem;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 0.5rem;
+      line-height: 1;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .modal-close:hover {
+      color: var(--ink);
+      background: var(--line);
+      transform: scale(1.1);
+    }
+    .modal-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .modal h2 {
+      margin: 0.75rem 0 0.5rem;
+      color: var(--navy);
+      font-size: 1.75rem;
+    }
+    .modal-bio {
+      color: var(--muted);
+      line-height: 1.7;
+      background: var(--sand);
+      padding: 1.5rem;
+      border-radius: 1rem;
+    }
+    .modal-qualifications {
+      color: var(--ink);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* testimonials */
+    .quote{font-style:italic;color:#334155}
+    .quote small{display:block;color:#6b7280}
+
+    footer{background:var(--navy);color:#cbd5e1;padding:2.5rem 0;margin-top:2rem}
+    footer a{color:#e2e8f0;text-decoration:none}
+    .footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.5rem}
+    .disclaimer{font-size:.85rem;color:#94A3B8;margin-top:1rem}
+
+    /* Mobile menu styles */
+    .mobile-menu-button {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--navy);
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .mobile-menu-button:hover {
+      color: var(--teal);
+    }
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 16px;
+      right: 16px;
+      background: var(--white);
+      border-radius: 0 0 14px 14px;
+      padding: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 4;
+    }
+    .mobile-menu.active {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .mobile-menu a {
+      padding: 0.75rem 1rem;
+      color: var(--navy);
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    .mobile-menu a:hover {
+      background: var(--sand);
+    }
+
+    @media (max-width: 900px){
+      .hero .grid{grid-template-columns:1fr}
+      .hero .grid > div:last-child{display:none} /* Hides the image container on mobile */
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .footgrid{grid-template-columns:1fr}
+      nav{display:none}
+      .mobile-menu-button{display:block}
+      #about .grid-2 > div:last-child{display:none} /* Hides the about section image on mobile */
+    }
+    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip:focus{position:static;width:auto;height:auto;background:var(--teal);padding:.25rem .5rem;color:var(--navy)}
+
+    /* Slideshow Styles */
+    .slideshow-card {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      border-radius: 0.5rem;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      display: block;
+    }
+
+    .slideshow-nav {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      padding: 0 15px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .slideshow-card:hover .slideshow-nav {
+      opacity: 1;
+    }
+
+    .slide-arrow {
+      background: rgba(15, 52, 70, 0.8);
+      color: white;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      pointer-events: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .slide-arrow:hover {
+      background: rgba(15, 52, 70, 1);
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .slide-arrow:active {
+      transform: scale(0.95);
+    }
+
+    /* About Us section - equal height columns */
+    #about .grid-2 {
+      align-items: stretch;
+    }
+
+    #about .grid-2 > .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Auto-advance slideshow */
+    .slideshow-container {
+      animation-play-state: running;
+    }
+
+    .slideshow-card:hover .slideshow-container {
+      animation-play-state: paused;
+    }
+
+    /* Consultation form styles */
+    .consultation-form {
+      box-sizing: border-box;
+    }
+    
+    .consultation-form *,
+    .consultation-form *::before,
+    .consultation-form *::after {
+      box-sizing: border-box;
+    }
+    
+    .consultation-form input,
+    .consultation-form select,
+    .consultation-form textarea {
+      box-sizing: border-box;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      font-family: inherit;
+    }
+    
+    .consultation-form input:focus,
+    .consultation-form select:focus,
+    .consultation-form textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(14, 165, 163, 0.1);
+    }
+    
+    .consultation-form input.error,
+    .consultation-form select.error,
+    .consultation-form textarea.error {
+      border-color: #EF4444;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+    
+    .consultation-form label {
+      font-weight: 500;
+      color: var(--navy);
+    }
+    
+    .field-error {
+      color: #EF4444;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: block;
+    }
+    
+    .form-success {
+      background: #10B981;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    
+    .form-error {
+      background: #EF4444;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    
+    @media (max-width: 900px) {
+      #consultation .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+
+  <header class="navbar" role="navigation" aria-label="Main">
+    <div class="container wrap">
+      <a class="logo" href="#home">
+        <span class="logo-mark"><img src="Logo.png" alt="Salmon & Co Solicitors logo with scales of justice"></span>
+      </a>
+      <nav>
+        <a href="#about">About Us</a>
+        <a href="#team">Meet Our Team</a>
+        <a href="#consultation">Free Consultation</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="main-content" style="margin: 18px 16px 24px 16px; background: #fff; border-radius: 14px;">
+    <section class="hero" id="home" style="border-radius: 14px 14px 0 0;">
+      <div class="container grid grid-2 grid-hero">
+        <div>
+          <h1 class="serif">Prompt, Skilled &amp; Affordable Legal Help.</h1>
+          <p>Operating from Greenacre in Sydney's south west, Salmon &amp; Co is a well‑established, respected firm with more than 30 years' experience providing quality legal services across a range of practice areas.</p>
+          <div style="display:flex;gap:.75rem;margin-top:1rem">
+            <a href="#consultation" class="btn primary" aria-label="Book a consultation">Request a Consultation</a>
+            <a href="#services" class="btn ghost" aria-label="View services">Explore Services</a>
+          </div>
+          <div style="display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap">
+            <span class="badge">🏛️ Admitted Solicitors</span>
+            <span class="badge">📍 Greenacre NSW 2190</span>
+            <span class="badge">🔒 Confidential &amp; Secure</span>
+          </div>
+        </div>
+        <div>
+          <div style="aspect-ratio: 7/9; padding: 0.25rem; max-width: 110%; margin-left: -15%;" aria-hidden="true">
+            <img 
+              src="FrontShot.png" 
+              alt="Terry Salmon" 
+              style="width:120%; height:100%; object-fit:contain; object-position: center;"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" aria-labelledby="team-title" class="attorneys" style="background:#fff;border-top:1px solid #E5E7EB;border-bottom:1px solid #E5E7EB">
+      <div class="container">
+        <h2 id="team-title" class="section-title">Meet Our Team</h2>
+        <div class="grid-2">
+          <article class="card person" onclick="openModal('terry-modal')">
+            <div class="avatar"><img src="Terry.png" alt="Terry Salmon"></div>
+            <div>
+              <h3 class="serif">Terry Salmon LL.B.</h3>
+              <p class="subtle">Click to read more about Terry...</p>
+            </div>
+          </article>
+          <article class="card person" onclick="openModal('vivianne-modal')">
+            <div class="avatar"><img src="Sidhomne.png" alt="Vivianne Sidhom"></div>
+            <div>
+              <h3 class="serif">Vivianne Sidhom LL.B B.Sc.</h3>
+              <p class="subtle">Click to read more about Vivianne...</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="consultation" aria-labelledby="consultation-title" style="background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="container">
+        <h2 id="consultation-title" class="section-title">Request a Consultation</h2>
+        <p class="subtle" style="margin-top:-.5rem;margin-bottom:2rem">Tell us about your legal matter and we'll get back to you within 24 hours</p>
+        <div class="grid-2">
+          <div class="card">
+            <form id="consultation-form" class="consultation-form" style="display:flex;flex-direction:column;gap:1rem">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                <div>
+                  <label for="first-name" style="display:block;margin-bottom:0.5rem;font-weight:500;color:var(--navy)">First Name *</label>
+                  <input type="text" id="first-name" name="firstName" required style="width:100%;max-width:100%;padding:0.75rem;border:1px solid var(--line);border-radius:0.5rem;font-size:1rem;box-sizing:border-box">
+                </div>
+                <div>
+                  <label for="last-name" style="display:block;margin-bottom:0.5rem;font-weight:500;color:var(--navy)">Last Name *</label>
+                  <input type="text" id="last-name" name="lastName" required style="width:100%;max-width:100%;padding:0.75rem;border:1px solid var(--line);border-radius:0.5rem;font-size:1rem;box-sizing:border-box">
+                </div>
+              </div>
+              <div>
+                <label for="email" style="display:block;margin-bottom:0.5rem;font-weight:500;color:var(--navy)">Email Address *</label>
+                <input type="email" id="email" name="email" required style="width:100%;max-width:100%;padding:0.75rem;border:1px solid var(--line);border-radius:0.5rem;font-size:1rem;box-sizing:border-box">
+                <span id="email-error" class="field-error" style="display:none"></span>
+              </div>
+              <div>
+                <label for="phone" style="display:block;margin-bottom:0.5rem;font-weight:500;color:var(--navy)">Phone Number</label>
+                <input type="tel" id="phone" name="phone" style="width:100%;max-width:100%;padding:0.75rem;border:1px solid var(--line);border-radius:0.5rem;font-size:1rem;box-sizing:border-box">
+              </div>
+              <div>
+                <label for="legal-area" style="display:block;margin-bottom:0.5rem;font-weight:500;color:var(--navy)">Legal Area *</label>
+                <select id="legal-area" name="legalArea" required style="width:100%;max-width:100%;padding:0.75rem;border:1px solid var(--line);border-radius:0.5rem;font-size:1rem;background:white;box-sizing:border-box">
+                  <option value="">Select a practice area...</option>
+                  <option value="wills-estates">Wills & Estate Planning</option>
+                  <option value="family-criminal">Family & Criminal Law</option>
+                  <option value="commercial-real-estate">Commercial Real Estate</option>
+                  <option value="residential-real-estate">Residential Real Estate</option>
+                  <option value="mortgages-loans">Mortgages & Loans</option>
+                  <option value="business-commercial">Business & Commercial Law</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" style="display:block;margin-bottom:0.5rem;font-weight:500;color:var(--navy)">Describe Your Legal Matter *</label>
+                <textarea id="message" name="message" required rows="4" placeholder="Please provide details about your legal matter..." style="width:100%;max-width:100%;padding:0.75rem;border:1px solid var(--line);border-radius:0.5rem;font-size:1rem;resize:vertical;font-family:inherit;box-sizing:border-box"></textarea>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:0.5rem">
+                <input type="checkbox" id="privacy" name="privacy" required style="margin-top:0.25rem">
+                <label for="privacy" style="font-size:0.9rem;color:var(--muted);line-height:1.4">I agree to the privacy policy and consent to my personal information being collected and used for the purpose of providing legal services. *</label>
+              </div>
+              <button type="submit" class="btn primary" style="width:fit-content;margin-top:0.5rem">Request Consultation</button>
+            </form>
+          </div>
+          <div class="card" style="background:var(--white);display:flex;flex-direction:column;justify-content:center;text-align:center">
+            <h3 class="serif" style="color:var(--navy);margin-top:0">Why Choose Salmon & Co?</h3>
+            <ul style="margin:1rem 0;padding-left:0;color:var(--muted);list-style:none">
+              <li style="margin-bottom:0.5rem">Over 30 years of legal experience</li>
+              <li style="margin-bottom:0.5rem">Prompt response within 24 hours</li>
+              <li style="margin-bottom:0.5rem">Competitive and transparent pricing</li>
+              <li style="margin-bottom:0.5rem">Free initial consultation</li>
+              <li style="margin-bottom:0.5rem">Convenient Greenacre location</li>
+            </ul>
+            <div style="background:var(--sand);padding:1rem;border-radius:0.75rem;margin-top:1rem">
+              <p style="margin:0;font-size:0.9rem;color:var(--muted);text-align:center">
+                <strong>Confidential & Secure</strong><br>
+                All consultations are strictly confidential and protected by solicitor-client privilege.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" aria-labelledby="services-title" class="practice">
+      <div class="container">
+        <h2 id="services-title" class="section-title">Practice Areas</h2>
+
+      <div class="grid-3">
+        <!-- Wills & Estate Planning -->
+        <article class="card tile practice-card" onclick="openModal('wills-modal')">
+          <img
+            alt="Wills and estate planning"
+            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop"
+            loading="lazy" decoding="async"
+          />
+          <h3 class="serif" style="margin:.2rem 0">Wills &amp; Estate Planning</h3>
+          <p class="subtle">Click to learn more about our Wills &amp; Estate services...</p>
+        </article>
+
+        <!-- Family & Criminal Law -->
+        <article class="card tile practice-card" onclick="openModal('family-modal')">
+          <img
+            alt="Family and criminal law"
+            src="family.jpg"
+            loading="lazy" decoding="async"
+          />
+          <h3 class="serif" style="margin:.2rem 0">Family &amp; Criminal Law</h3>
+          <p class="subtle">Click to learn more about our Family &amp; Criminal Law services...</p>
+        </article>
+
+        <!-- Commercial Real Estate -->
+        <article class="card tile practice-card" onclick="openModal('commercial-modal')">
+          <img
+            alt="Commercial real estate"
+            src="https://images.unsplash.com/photo-1499914485622-a88fac536970?q=80&w=1200&auto=format&fit=crop"
+            loading="lazy" decoding="async"
+          />
+          <h3 class="serif" style="margin:.2rem 0">Commercial Real Estate</h3>
+          <p class="subtle">Click to learn more about our Commercial Property services...</p>
+        </article>
+
+        <!-- Residential Real Estate -->
+        <article class="card tile practice-card" onclick="openModal('residential-modal')">
+          <img
+            alt="Residential real estate"
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop"
+            loading="lazy" decoding="async"
+          />
+          <h3 class="serif" style="margin:.2rem 0">Residential Real Estate</h3>
+          <p class="subtle">Click to learn more about our Residential Property services...</p>
+        </article>
+
+        <!-- Mortgages & Loans -->
+        <article class="card tile practice-card" onclick="openModal('mortgages-modal')">
+          <img
+            alt="Mortgages and loans"
+            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop"
+            loading="lazy" decoding="async"
+          />
+          <h3 class="serif" style="margin:.2rem 0">Mortgages &amp; Loans</h3>
+          <p class="subtle">Click to learn more about our Mortgages &amp; Loans services...</p>
+        </article>
+
+        <!-- Business & Commercial Law -->
+        <article class="card tile practice-card" onclick="openModal('business-modal')">
+          <img
+            alt="Business and commercial law"
+            src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop"
+            loading="lazy" decoding="async"
+          />
+          <h3 class="serif" style="margin:.2rem 0">Business &amp; Commercial Law</h3>
+          <p class="subtle">Click to learn more about our Business Law services...</p>
+        </article>
+      </div>
+      
+      <!-- Practice Area Modals -->
+      <div id="wills-modal" class="modal" onclick="closeModal('wills-modal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+          <button class="modal-close" onclick="closeModal('wills-modal')">&times;</button>
+          <div class="modal-header">
+            <h2 class="serif">Wills &amp; Estate Planning</h2>
+          </div>
+          <div class="modal-bio">
+            <p>Our Wills and Estate Planning services include:</p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+              <li>Preparation of Wills</li>
+              <li>Powers of Attorney</li>
+              <li>Appointment of Enduring Guardian</li>
+              <li>Estate Administration</li>
+              <li>Probate Applications</li>
+              <li>Letters of Administration</li>
+              <li>Trust Creation and Management</li>
+              <li>Estate Litigation and Disputes</li>
+            </ul>
+            <p>We ensure your wishes are clearly documented and legally binding, providing peace of mind for you and your loved ones.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="family-modal" class="modal" onclick="closeModal('family-modal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+          <button class="modal-close" onclick="closeModal('family-modal')">&times;</button>
+          <div class="modal-header">
+            <h2 class="serif">Family &amp; Criminal Law</h2>
+          </div>
+          <div class="modal-bio">
+            <p>Our Family and Criminal Law services cover:</p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+              <li>Divorce and Separation</li>
+              <li>Property Settlement</li>
+              <li>Child Custody and Support</li>
+              <li>Apprehended Violence Orders (AVOs)</li>
+              <li>Local Court Appearances</li>
+              <li>Criminal Defense</li>
+              <li>Traffic Offenses</li>
+              <li>Mediation Services</li>
+            </ul>
+            <p>We provide compassionate support and strong advocacy during challenging personal circumstances.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="commercial-modal" class="modal" onclick="closeModal('commercial-modal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+          <button class="modal-close" onclick="closeModal('commercial-modal')">&times;</button>
+          <div class="modal-header">
+            <h2 class="serif">Commercial Real Estate</h2>
+          </div>
+          <div class="modal-bio">
+            <p>Our Commercial Property services include:</p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+              <li>Commercial Property Purchases and Sales</li>
+              <li>Commercial Lease Agreements</li>
+              <li>Due Diligence Investigations</li>
+              <li>Development Applications</li>
+              <li>Retail Leases</li>
+              <li>Property Development</li>
+              <li>Commercial Property Disputes</li>
+              <li>Strata Title Matters</li>
+            </ul>
+            <p>We help businesses make informed decisions in their property transactions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="residential-modal" class="modal" onclick="closeModal('residential-modal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+          <button class="modal-close" onclick="closeModal('residential-modal')">&times;</button>
+          <div class="modal-header">
+            <h2 class="serif">Residential Real Estate</h2>
+          </div>
+          <div class="modal-bio">
+            <p>Our Residential Property services cover:</p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+              <li>Residential Conveyancing</li>
+              <li>Property Purchases and Sales</li>
+              <li>First Home Buyers Assistance</li>
+              <li>Property Inspections</li>
+              <li>Contract Reviews</li>
+              <li>Settlement Services</li>
+              <li>Title Searches</li>
+              <li>Property Transfer Advice</li>
+            </ul>
+            <p>We make the process of buying or selling your home smooth and stress-free.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="mortgages-modal" class="modal" onclick="closeModal('mortgages-modal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+          <button class="modal-close" onclick="closeModal('mortgages-modal')">&times;</button>
+          <div class="modal-header">
+            <h2 class="serif">Mortgages &amp; Loans</h2>
+          </div>
+          <div class="modal-bio">
+            <p>Our Mortgages and Loans services include:</p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+              <li>Mortgage Documentation</li>
+              <li>Loan Agreement Review</li>
+              <li>Refinancing Advice</li>
+              <li>Security Documentation</li>
+              <li>Mortgage Discharge</li>
+              <li>Private Lending</li>
+              <li>Second Mortgages</li>
+              <li>Loan Restructuring</li>
+            </ul>
+            <p>We ensure your lending arrangements are properly structured and documented.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="business-modal" class="modal" onclick="closeModal('business-modal')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+          <button class="modal-close" onclick="closeModal('business-modal')">&times;</button>
+          <div class="modal-header">
+            <h2 class="serif">Business &amp; Commercial Law</h2>
+          </div>
+          <div class="modal-bio">
+            <p>Our Business and Commercial Law services cover:</p>
+            <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+              <li>Business Structuring</li>
+              <li>Contract Drafting and Review</li>
+              <li>Business Sales and Purchases</li>
+              <li>Partnership Agreements</li>
+              <li>Shareholder Agreements</li>
+              <li>Commercial Disputes</li>
+              <li>Debt Recovery</li>
+              <li>Business Succession Planning</li>
+            </ul>
+            <p>We help protect your business interests and facilitate growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+
+
+    <!-- Team Member Modals -->
+    <div id="terry-modal" class="modal" onclick="closeModal('terry-modal')">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeModal('terry-modal')">&times;</button>
+        <div class="modal-header">
+          <div class="avatar"><img src="Terry.png" alt="Terry Salmon"></div>
+          <h2 class="serif">Terry Salmon</h2>
+          <p class="modal-qualifications">LL.B. (Bachelor of Laws)</p>
+        </div>
+        <div class="modal-bio">
+          <p>Terry has been practising as a solicitor for over 30 years, with extensive experience across multiple areas of law including:</p>
+          <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+            <li style="margin-bottom: 0.5rem">Property Law and Conveyancing</li>
+            <li style="margin-bottom: 0.5rem">Wills and Estate Planning</li>
+            <li style="margin-bottom: 0.5rem">Commercial and Business Law</li>
+            <li style="margin-bottom: 0.5rem">Family Law</li>
+          </ul>
+          <p>His commitment to providing practical, cost-effective legal solutions has earned him a reputation for excellence in Sydney's legal community.</p>
+          
+          <div style="margin-top: 2rem;">
+            <h4 style="color: var(--navy); margin-bottom: 1rem; text-align: center;">Educational Qualifications</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+              <div style="text-align: center;">
+                <img src="Usyd.png" alt="University of Sydney Bachelor of Laws degree certificate for Terrence Patrick Salmon" style="width: 100%; max-width: 250px; height: auto; border: 1px solid var(--line); border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; font-style: italic;">Bachelor of Laws, University of Sydney (1975)</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="CollegeOfLaw.png" alt="College of Law certificate for Terrence Patrick Salmon" style="width: 100%; max-width: 250px; height: auto; border: 1px solid var(--line); border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <p style="font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; font-style: italic;">College of Law Certification (1975)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="vivianne-modal" class="modal" onclick="closeModal('vivianne-modal')">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeModal('vivianne-modal')">&times;</button>
+        <div class="modal-header">
+          <div class="avatar"><img src="Sidhomne.png" alt="Vivianne Sidhom"></div>
+          <h2 class="serif">Vivianne Sidhom</h2>
+          <p class="modal-qualifications">LL.B. (Bachelor of Laws), B.Sc. (Bachelor of Science)</p>
+        </div>
+        <div class="modal-bio">
+          <p>Vivianne brings a unique combination of legal expertise and analytical thinking to her practice. Her areas of focus include:</p>
+          <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+            <li style="margin-bottom: 0.5rem">Family Law and Divorce Proceedings</li>
+            <li style="margin-bottom: 0.5rem">Criminal Law</li>
+            <li style="margin-bottom: 0.5rem">Property Law</li>
+            <li style="margin-bottom: 0.5rem">Estate Planning</li>
+          </ul>
+          <p>With her background in both law and science, Vivianne approaches each case with careful attention to detail and a commitment to achieving the best possible outcomes for her clients.</p>
+        </div>
+      </div>
+    </div>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="section-title">About Us</h2>
+        <div class="grid-2">
+          <div class="card">
+            
+          <p><strong>Salmon &amp; Co Solicitors</strong> is a well-established and respected practice with more than 30 years' experience serving individuals, families, and businesses across Sydney's south-west. Founded in <strong>1982</strong>, we are the <strong>longest-standing solicitors in Sydney’s west</strong>, proudly based in Greenacre. We combine deep legal expertise with plain-English advice, so you always understand your options and the path forward.</p>
+
+<p>We pride ourselves on the <em>prompt, efficient, and affordable</em> delivery of quality legal services across a broad range of practice areas, including Wills &amp; Estates, Family Law, Criminal &amp; Local Court matters, Property and Conveyancing (residential and commercial), Business &amp; Commercial Law, and Mortgages &amp; Loans.</p>
+
+<p><strong><em>Our approach is practical and outcomes-focused: clear communication, timely updates, and careful attention to detail at every step.</em></strong></p>
+
+<p>Conveniently located in the centre of the Greenacre shopping strip, our office offers easy access and free parking. For your convenience, we can also meet at your home or business, or in our Sydney city office. Whatever the matter, you can expect discretion, professionalism, and steadfast advocacy from a team committed to achieving the best result for you.</p>
+
+          
+          </div>
+          <div class="card slideshow-card" aria-hidden="true">
+            <div class="slideshow-container">
+              <div class="slide active">
+                <img 
+                  src="TerryFullBody.png" 
+                  alt="Terry Salmon, Principal Solicitor in professional attire at Salmon & Co office" 
+                />
+              </div>
+              <div class="slide">
+                <img 
+                  src="Receptionist.png" 
+                  alt="Professional reception area at Salmon & Co Solicitors office" 
+                />
+              </div>
+              <div class="slide">
+                <img 
+                  src="Clients.png" 
+                  alt="Client consultation meeting at Salmon & Co Solicitors" 
+                />
+              </div>
+              <div class="slide">
+                <img 
+                  src="Client2.png" 
+                  alt="Professional consultation in Terry Salmon's office" 
+                />
+              </div>
+              <div class="slideshow-nav">
+                <button class="slide-arrow slide-prev" onclick="event.stopPropagation(); changeSlide(-1);">&lt;</button>
+                <button class="slide-arrow slide-next" onclick="event.stopPropagation(); changeSlide(1);">&gt;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+
+  <section id="contact" aria-labelledby="contact-title" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="container">
+      <h2 id="contact-title" class="section-title">Contact</h2>
+      <p class="subtle" style="margin-top:-.5rem">9.00–5.30 Monday to Friday • Other times by appointment</p>
+      <div class="grid-2">
+        <div>
+          <div class="card">
+            <h3 class="serif">Address &amp; Mail</h3>
+            <p>Suite 3, Level 1/159 Waterloo Rd<br/>Greenacre NSW 2190</p>
+            <p>Sydney, Australia<br/>PO Box 34 Greenacre NSW 2190</p>
+            <hr>
+            <h3 class="serif">Phone</h3>
+            <p>Tel (02) 9750 7511<br/>Fax (02) 9750 2730</p>
+          </div>
+          <div class="card" style="margin-top:1rem">
+            <h3 class="serif">Email</h3>
+            <p>Email Terry: <a href="mailto:tsalmon@salmonssolicitors.com.au">tsalmon@salmonssolicitors.com.au</a></p>
+            <p>Email Vivianne: <a href="mailto:vsidhom@salmonssolicitors.com.au">vsidhom@salmonssolicitors.com.au</a></p>
+            <p class="subtle" style="margin-top:1rem">For a <strong>confidential consultation</strong>, please email us at <a href="mailto:office@salmonssolicitors.com.au">office@salmonssolicitors.com.au</a>.</p>
+          </div>
+        </div>
+        <div class="card" style="height:100%">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.3954813965867!2d151.06010047681843!3d-33.91147607327164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bb9f76523e81%3A0xfa7a871f5ef946d9!2sSalmon%20%26%20Co!5e0!3m2!1sen!2sau!4v1731236589283!5m2!1sen!2sau" 
+            style="border:0; width:100%; height:100%; min-height:400px; border-radius:var(--radius)" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Google Maps location of Salmon & Co Solicitors">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container footgrid">
+      <div><div class="logo"><span class="logo-mark"><img src="Salmon.png" alt="Salmon & Co Solicitors logo" style="filter: brightness(0) invert(1);"></span></div><p class="disclaimer"><i><em>This website provides general information only and does not constitute legal advice...</em></i></p></div>
+      <div><h4>Contact</h4><p>📍 Suite 3, Level 1/159 Waterloo Rd, Greenacre NSW 2190<br/>📞 (02) 9750 7511</p></div>
+      <div><h4>Follow Us</h4><p><a href="#">LinkedIn</a><br><a href="#">Facebook</a></p></div>
+    </div>
+    <div class="container" style="border-top:1px solid rgba(255,255,255,.15);margin-top:1rem;padding-top:1rem;font-size:.9rem;color:#94A3B8">© <span id="y"></span> Salmon &amp; Co Solicitors. All rights reserved.</div>
+  </footer>
+
+  <!-- Form Message Styles -->
+  <style>
+    .form-message-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      z-index: 10000;
+      min-width: 300px;
+      max-width: 400px;
+      text-align: center;
+      border: 2px solid;
+      animation: fadeInScale 0.3s ease-out;
+    }
+    
+    .form-message-processing {
+      border-color: #2563eb;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      color: #1d4ed8;
+    }
+    
+    .form-message-success {
+      border-color: #16a34a;
+      background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+      color: #15803d;
+    }
+    
+    .form-message-error {
+      border-color: #dc2626;
+      background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+      color: #dc2626;
+    }
+    
+    .form-message-content {
+      padding: 24px;
+      font-weight: 500;
+      font-size: 16px;
+    }
+    
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #93c5fd;
+      border-radius: 50%;
+      border-top-color: #2563eb;
+      animation: spin 1s ease-in-out infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    
+    .success-icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: #16a34a;
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: middle;
+      position: relative;
+    }
+    
+    .success-icon::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    
+    .error-icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: #dc2626;
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: middle;
+      position: relative;
+    }
+    
+    .error-icon::after {
+      content: '✗';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    
+    .form-message-box.processing .form-message-content {
+      animation: pulse 2s infinite;
+    }
+  </style>
+  
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script>
+    // Set year when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      const yearElement = document.getElementById('y');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+    });
+    
+    // Initialize EmailJS
+    if (typeof emailjs !== 'undefined') {
+      emailjs.init("buQ5BzRbHIIyJlTIp"); // EmailJS public key
+    }
+    
+    // Modal functionality
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const activeModals = document.querySelectorAll('.modal.active');
+        activeModals.forEach(modal => {
+          if (modal && modal.id) {
+            closeModal(modal.id);
+          }
+        });
+        // Also close mobile menu on escape
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+          toggleMobileMenu();
+        }
+      }
+    });
+
+    // Mobile menu functionality
+    function toggleMobileMenu() {
+      const mobileMenu = document.querySelector('.mobile-menu');
+      if (!mobileMenu) return;
+      
+      mobileMenu.classList.toggle('active');
+      
+      // Close menu when clicking outside
+      if (mobileMenu.classList.contains('active')) {
+        document.addEventListener('click', closeMenuOutside);
+      } else {
+        document.removeEventListener('click', closeMenuOutside);
+      }
+    }
+
+    function closeMenuOutside(event) {
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const mobileMenuButton = document.querySelector('.mobile-menu-button');
+      
+      if (mobileMenu && mobileMenuButton && 
+          !mobileMenu.contains(event.target) && 
+          !mobileMenuButton.contains(event.target)) {
+        mobileMenu.classList.remove('active');
+        document.removeEventListener('click', closeMenuOutside);
+      }
+    }
+
+    // Close mobile menu when clicking a link
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', function(event) {
+        if (event.target.tagName === 'A') {
+          toggleMobileMenu();
+        }
+      });
+    }
+
+    // Slideshow functionality
+    var currentSlide = 0;
+    var isInitialized = false;
+
+    function changeSlide(direction) {
+      console.log('changeSlide called with direction:', direction);
+      
+      // Ensure slideshow is initialized first
+      if (!isInitialized) {
+        console.log('Slideshow not initialized, initializing now...');
+        initializeSlideshow();
+        return;
+      }
+      
+      const slides = document.querySelectorAll('.slide');
+      console.log('Found slides:', slides.length);
+      
+      if (slides.length === 0) {
+        console.log('No slides found');
+        return;
+      }
+
+      // Ensure currentSlide is within bounds
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+
+      // Remove active class from current slide
+      slides[currentSlide].classList.remove('active');
+      console.log('Removed active from slide:', currentSlide);
+      
+      // Calculate new slide index
+      currentSlide = (currentSlide + direction + slides.length) % slides.length;
+      console.log('New slide index:', currentSlide);
+      
+      // Add active class to new slide
+      slides[currentSlide].classList.add('active');
+      console.log('Added active to slide:', currentSlide);
+    }
+
+    function initializeSlideshow() {
+      console.log('Initializing slideshow...');
+      
+      const slides = document.querySelectorAll('.slide');
+      console.log('Found slides during init:', slides.length);
+      
+      if (slides.length === 0) {
+        console.log('No slides found, retrying in 100ms');
+        setTimeout(initializeSlideshow, 100);
+        return;
+      }
+
+      // Reset to first slide
+      currentSlide = 0;
+      
+      // Ensure first slide is active
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === 0);
+        console.log('Slide', index, 'active:', index === 0);
+      });
+      
+      isInitialized = true;
+      console.log('Slideshow initialized successfully with currentSlide:', currentSlide);
+      
+      // Start auto-advance
+      startAutoSlideshow();
+    }
+    
+    // Auto-advance slideshow functionality
+    let slideshowInterval;
+    let isHovered = false;
+    
+    function startAutoSlideshow() {
+      if (slideshowInterval) {
+        clearInterval(slideshowInterval);
+      }
+      
+      slideshowInterval = setInterval(() => {
+        if (!isHovered && isInitialized) {
+          changeSlide(1);
+        }
+      }, 4000); // Change slide every 4 seconds
+      
+      console.log('Auto-slideshow started');
+    }
+    
+    function stopAutoSlideshow() {
+      if (slideshowInterval) {
+        clearInterval(slideshowInterval);
+        console.log('Auto-slideshow stopped');
+      }
+    }
+    
+    // Add hover event listeners to pause auto-advance
+    document.addEventListener('DOMContentLoaded', function() {
+      const slideshowCard = document.querySelector('.slideshow-card');
+      
+      if (slideshowCard) {
+        slideshowCard.addEventListener('mouseenter', function() {
+          isHovered = true;
+          console.log('Slideshow paused - mouse hover');
+        });
+        
+        slideshowCard.addEventListener('mouseleave', function() {
+          isHovered = false;
+          console.log('Slideshow resumed - mouse left');
+        });
+      }
+    });
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeSlideshow);
+    } else {
+      initializeSlideshow();
+    }
+
+    // Consultation form functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const consultationForm = document.getElementById('consultation-form');
+      const emailInput = document.getElementById('email');
+      const emailError = document.getElementById('email-error');
+      
+      if (consultationForm && emailInput) {
+        // Real-time email validation
+        emailInput.addEventListener('blur', function() {
+          validateEmail(emailInput.value.trim());
+        });
+        
+        emailInput.addEventListener('input', function() {
+          clearFieldError(emailInput, emailError);
+        });
+      }
+      
+      if (consultationForm) {
+        
+        consultationForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Clear previous errors
+          clearAllErrors();
+          
+          // Get form data
+          const formData = new FormData(consultationForm);
+          const data = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            legalArea: formData.get('legalArea'),
+            message: formData.get('message'),
+            privacy: formData.get('privacy')
+          };
+          
+          let hasErrors = false;
+          
+          // Validate required fields
+          if (!data.firstName?.trim()) {
+            showFieldError('first-name', 'First name is required');
+            hasErrors = true;
+          }
+          
+          if (!data.lastName?.trim()) {
+            showFieldError('last-name', 'Last name is required');
+            hasErrors = true;
+          }
+          
+          if (!data.email?.trim()) {
+            showFieldError('email', 'Email address is required');
+            hasErrors = true;
+          } else if (!validateEmail(data.email.trim())) {
+            hasErrors = true;
+          }
+          
+          if (!data.legalArea) {
+            showFieldError('legal-area', 'Please select a legal area');
+            hasErrors = true;
+          }
+          
+          if (!data.message?.trim()) {
+            showFieldError('message', 'Please describe your legal matter');
+            hasErrors = true;
+          }
+          
+          if (!data.privacy) {
+            showFormMessage('Please accept the privacy policy to continue.', 'error');
+            hasErrors = true;
+          }
+          
+          if (hasErrors) {
+            return;
+          }
+          
+          // Submit form using Web3Forms
+          submitConsultationForm(data);
+        });
+      }
+    });
+    
+    function validateEmail(email) {
+      const emailError = document.getElementById('email-error');
+      const emailInput = document.getElementById('email');
+      
+      if (!email) {
+        return true; // Empty email will be caught by required field validation
+      }
+      
+      // Enhanced email regex for better validation
+      const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+      
+      if (!emailRegex.test(email)) {
+        showFieldError('email', 'Please enter a valid email address (e.g., name@example.com)');
+        return false;
+      }
+      
+      // Additional checks
+      if (email.length > 254) {
+        showFieldError('email', 'Email address is too long');
+        return false;
+      }
+      
+      const localPart = email.split('@')[0];
+      if (localPart.length > 64) {
+        showFieldError('email', 'Email address format is invalid');
+        return false;
+      }
+      
+      clearFieldError(emailInput, emailError);
+      return true;
+    }
+    
+    function showFieldError(fieldId, message) {
+      const field = document.getElementById(fieldId);
+      field.classList.add('error');
+      
+      if (fieldId === 'email') {
+        const errorSpan = document.getElementById('email-error');
+        errorSpan.textContent = message;
+        errorSpan.style.display = 'block';
+      }
+    }
+    
+    function clearFieldError(field, errorElement) {
+      field.classList.remove('error');
+      if (errorElement) {
+        errorElement.style.display = 'none';
+        errorElement.textContent = '';
+      }
+    }
+    
+    function clearAllErrors() {
+      const fields = ['first-name', 'last-name', 'email', 'phone', 'legal-area', 'message'];
+      fields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        field.classList.remove('error');
+      });
+      
+      const emailError = document.getElementById('email-error');
+      if (emailError) {
+        emailError.style.display = 'none';
+        emailError.textContent = '';
+      }
+    }
+    
+    function submitConsultationForm(data) {
+      console.log('Form submission started:', data);
+      
+      // Show loading state
+      const submitBtn = document.querySelector('#consultation-form button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+      
+      // Show immediate processing message with animation
+      showFormMessage('Processing your consultation request...', 'processing');
+      
+      // Create email content
+      const subject = `Consultation Request - ${data.legalArea} - ${data.firstName} ${data.lastName}`;
+      const emailBody = `New Consultation Request from Salmon & Co Website
+
+CLIENT INFORMATION:
+Name: ${data.firstName} ${data.lastName}
+Email: ${data.email}
+Phone: ${data.phone || 'Not provided'}
+Legal Area: ${data.legalArea}
+Submission Date: ${new Date().toLocaleDateString('en-AU')}
+Submission Time: ${new Date().toLocaleTimeString('en-AU')}
+
+MESSAGE:
+${data.message}
+
+---
+This consultation request was submitted via the Salmon & Co Solicitors website contact form.
+Please respond directly to the client's email address: ${data.email}`;
+
+      // Use Formspree with a working endpoint
+      const formData = new FormData();
+      formData.append('_to', 'wailordspitter@gmail.com');
+      formData.append('_subject', subject);
+      formData.append('_replyto', data.email);
+      formData.append('name', `${data.firstName} ${data.lastName}`);
+      formData.append('email', data.email);
+      formData.append('phone', data.phone || 'Not provided');
+      formData.append('legal_area', data.legalArea);
+      formData.append('message', data.message);
+      formData.append('_format', 'plain');
+      formData.append('_next', window.location.href + '#success');
+      
+      // Force minimum 3 second display time for processing animation
+      setTimeout(() => {
+        // Prepare EmailJS template parameters
+        const templateParams = {
+          to_email: 'wailordspitter@gmail.com',
+          from_name: `${data.firstName} ${data.lastName}`,
+          from_email: data.email,
+          phone: data.phone || 'Not provided',
+          legal_area: data.legalArea,
+          message: data.message,
+          subject: subject,
+          submission_date: new Date().toLocaleDateString('en-AU'),
+          submission_time: new Date().toLocaleTimeString('en-AU')
+        };
+        
+        console.log('Sending email via EmailJS with params:', templateParams);
+        
+        // Send email using EmailJS
+        emailjs.send('service_yx7o78s', 'template_h3kqdjw', templateParams)
+        .then(function(response) {
+          console.log('EmailJS SUCCESS:', response.status, response.text);
+          
+          // Show success message
+          showFormMessage('✓ Thank you for your consultation request! We will contact you within 24 hours.', 'success');
+          
+          // Reset form after delay
+          setTimeout(() => {
+            document.getElementById('consultation-form').reset();
+            setTimeout(() => {
+              hideFormMessage();
+            }, 2000);
+          }, 1000);
+          
+        }, function(error) {
+          console.error('EmailJS FAILED:', error);
+          
+          // Fallback to mailto if EmailJS fails
+          const mailtoLink = `mailto:wailordspitter@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+          
+          try {
+            window.open(mailtoLink, '_blank');
+            showFormMessage('✓ Email service temporarily unavailable. Your email client has opened with the consultation request.', 'success');
+            
+            setTimeout(() => {
+              document.getElementById('consultation-form').reset();
+              setTimeout(() => {
+                hideFormMessage();
+              }, 3000);
+            }, 1000);
+          } catch (mailtoError) {
+            showFormMessage('✗ Sorry, there was an error sending your request. Please contact us directly at (02) 9750 7511.', 'error');
+            setTimeout(() => {
+              hideFormMessage();
+            }, 5000);
+          }
+        })
+        .finally(() => {
+          // Reset button
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        });
+      }, 3000); // 3 second minimum processing time
+    }
+    
+    let currentMessageBox = null;
+    
+    function showFormMessage(message, type) {
+      // Remove existing message box
+      hideFormMessage();
+      
+      // Create message box container
+      const messageBox = document.createElement('div');
+      messageBox.className = `form-message-box form-message-${type} ${type}`;
+      
+      // Create content container
+      const content = document.createElement('div');
+      content.className = 'form-message-content';
+      
+      // Add appropriate icon and message
+      if (type === 'processing') {
+        content.innerHTML = `<div class="loading-spinner"></div>${message}`;
+      } else if (type === 'success') {
+        content.innerHTML = `<div class="success-icon"></div>${message}`;
+      } else if (type === 'error') {
+        content.innerHTML = `<div class="error-icon"></div>${message}`;
+      }
+      
+      messageBox.appendChild(content);
+      
+      // Add to document body
+      document.body.appendChild(messageBox);
+      currentMessageBox = messageBox;
+      
+      console.log(`Showing ${type} message:`, message);
+    }
+    
+    function hideFormMessage() {
+      if (currentMessageBox && currentMessageBox.parentNode) {
+        currentMessageBox.remove();
+        currentMessageBox = null;
+      }
+    }
+    
+    function showCopyPasteInstructions(subject, emailBody) {
+      // Remove existing message box
+      hideFormMessage();
+      
+      // Create special copy-paste instruction box
+      const messageBox = document.createElement('div');
+      messageBox.className = 'form-message-box form-message-info';
+      messageBox.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border: 2px solid #0066cc;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        min-width: 400px;
+        max-width: 600px;
+        max-height: 80vh;
+        overflow-y: auto;
+        animation: fadeInScale 0.3s ease-out;
+      `;
+      
+      const content = document.createElement('div');
+      content.style.cssText = `
+        padding: 24px;
+        text-align: left;
+      `;
+      
+      content.innerHTML = `
+        <h3 style="margin: 0 0 16px 0; color: #0066cc; text-align: center;">Email Client Instructions</h3>
+        <p style="margin-bottom: 16px; text-align: center;">Please copy the information below and email it to:</p>
+        <p style="text-align: center; font-weight: bold; font-size: 18px; color: #0066cc; margin-bottom: 20px;">wailordspitter@gmail.com</p>
+        
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px;">Subject:</label>
+          <textarea readonly style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace; resize: none; background: #f9f9f9;" rows="2">${subject}</textarea>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+          <label style="display: block; font-weight: bold; margin-bottom: 8px;">Message:</label>
+          <textarea readonly style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: monospace; resize: none; background: #f9f9f9;" rows="12">${emailBody}</textarea>
+        </div>
+        
+        <div style="text-align: center;">
+          <button onclick="this.parentElement.parentElement.parentElement.remove(); currentMessageBox = null;" style="padding: 12px 24px; background: #0066cc; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px;">Got it, thanks!</button>
+        </div>
+      `;
+      
+      messageBox.appendChild(content);
+      document.body.appendChild(messageBox);
+      currentMessageBox = messageBox;
+      
+      // Auto-select all text in textareas when clicked
+      const textareas = content.querySelectorAll('textarea');
+      textareas.forEach(textarea => {
+        textarea.addEventListener('click', function() {
+          this.select();
+        });
+      });
+    }
+  </script>
+
+  <!-- Chat Bubble - DISABLED -->
+  <style>
+  #salmon-bubble{position:fixed;right:20px;bottom:20px;z-index:9999;display:none}
+  #salmon-bubble button {
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    border:0;
+    background-color: #265972;
+    background-image: url('Chatbubble.png');
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    transition: transform 0.3s ease;
+    color: white;
+  }
+  #salmon-bubble button:hover {
+    transform: scale(1.1);
+  }
+  #salmon-panel{position:fixed;right:20px;bottom:102px;width:460px;max-height:75vh;background:#fff;border:1px solid #ddd;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:none;overflow:hidden;font:15px system-ui}
+  #salmon-head{padding:16px;border-bottom:1px solid #eee;font-weight:600}
+  #salmon-msgs{padding:20px;height:450px;overflow:auto}
+  #salmon-msgs .msg{display:flex;gap:12px;margin:16px 0;align-items:flex-start}
+  #salmon-msgs .msg .avatar{
+    min-width: var(--chat-avatar-size) !important;
+    width: var(--chat-avatar-size) !important;
+    height: var(--chat-avatar-size) !important;
+    border-radius: 9999px !important;
+    flex: none !important;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: var(--chat-avatar-font);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: none !important;
+  }
+  #salmon-msgs .msg.user .avatar{
+    background:#E1F0FF;
+    color:#0066CC;
+  }
+  #salmon-msgs .msg.bot .avatar{
+    background:#1B4965;
+    color:#ffffff;
+  }
+  #salmon-msgs .content{
+    flex:1;
+    background:#F8F8F8;
+    padding:12px 16px;
+    border-radius:12px;
+    position:relative;
+    margin-top:0;
+  }
+  #salmon-msgs .user .content{
+    background:#E1F0FF;
+  }
+  #salmon-msgs .bot .content{
+    background:#F8F8F8;
+  }
+  
+  /* Typing indicator */
+  .typing-indicator {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    width: fit-content;
+  }
+  .typing-indicator span {
+    width: 5px;
+    height: 5px;
+    background: #666;
+    border-radius: 50%;
+    animation: bounce 1.3s linear infinite;
+    display: inline-block;
+  }
+  .typing-indicator span:nth-child(2) { animation-delay: 0.15s; }
+  .typing-indicator span:nth-child(3) { animation-delay: 0.3s; }
+  
+  @keyframes bounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-4px); }
+  }
+  #salmon-form{display:flex;gap:8px;padding:12px;border-top:1px solid #eee;background:#fafafa}
+  #salmon-form input{flex:1;padding:12px;border:1px solid #ddd;border-radius:10px;font-size:15px}
+  #salmon-form button{padding:12px 16px;border:0;border-radius:10px;background:#0F3446;color:#fff;cursor:pointer;font-size:15px;font-weight:500}
+  </style>
+
+  <div id="salmon-bubble">
+    <button id="salmon-open" aria-label="Open chat"></button>
+  </div>
+
+  <div id="salmon-panel" role="dialog" aria-label="Salmon & Co. Ai Chat">
+    <div id="salmon-head">Salmon &amp; Co. — Ai Assistant Chat</div>
+    <div id="salmon-msgs">
+    </div>
+    <form id="salmon-form">
+      <input id="salmon-input" placeholder="Ask about our services…" autocomplete="off" />
+      <button>Send</button>
+    </form>
+  </div>
+
+  <script>
+  const API = "https://salmonchatfunc-fydkcxbhh2bufxca.australiaeast-01.azurewebsites.net/api/chat";
+  const openBtn = document.getElementById('salmon-open');
+  const panel = document.getElementById('salmon-panel');
+  const msgs = document.getElementById('salmon-msgs');
+  const form = document.getElementById('salmon-form');
+  const input = document.getElementById('salmon-input');
+  const history = [];
+
+  openBtn.onclick = ()=>{ panel.style.display = panel.style.display==='none' || !panel.style.display ? 'block':'none'; };
+
+  function add(role, text){
+    const d = document.createElement('div');
+    d.className = `msg ${role.toLowerCase() === 'bot' ? 'bot' : 'user'}`;
+    d.style.whiteSpace = 'pre-wrap';
+    const displayName = role === 'Bot' ? 'S.C.AI' : 'You';
+    
+    // Format lists if text contains bullet points
+    let formattedText = text;
+    if (text.includes('\n-')) {
+      formattedText = text.split('\n').map(line => {
+        if (line.trim().startsWith('-')) {
+          return '• ' + line.trim().substring(1);
+        }
+        return line;
+      }).join('\n');
+    }
+    
+    d.innerHTML = `
+      <div class="avatar">${displayName}</div>
+      <div class="content">${formattedText}</div>
+    `;
+    
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+    return d;
+  }
+
+  function addTypingIndicator() {
+    const d = document.createElement('div');
+    d.className = 'msg bot';
+    d.innerHTML = `
+      <div class="avatar">S.C.AI</div>
+      <div class="content">
+        <div class="typing-indicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    `;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+    return d;
+  }
+
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const user = input.value.trim(); if(!user) return;
+    add('You', user); input.value = '';
+
+    const typingIndicator = addTypingIndicator();
+    
+    try {
+      const res = await fetch(API, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ message: user, history })
+      });
+      const data = await res.json();
+      let botResponse = data.text || 'Sorry, no response.';
+      
+      // Format the response to handle lists and formatting
+      botResponse = botResponse.replace(/\n\s*-\s*/g, '\n- '); // Normalize list formatting
+      
+      typingIndicator.remove();
+      add('Bot', botResponse);
+    } catch (error) {
+      typingIndicator.remove();
+      add('Bot', 'Sorry, I encountered an error. Please try again.');
+    }
+
+    history.push({role:'user', content:user}, {role:'assistant', content:bot});
+    if (history.length > 12) history.splice(0, history.length - 12);
+  });
+  </script>
+
+</body>
+</html>
